@@ -1,4 +1,17 @@
-planningpoker
-=============
+planning-poker-mobile-app
+=========================
 
-a simple, leightweight HTML5 planning poker app
+web app repository
+
+Prerequisites
+-------------
+
+* a working node.js environment
+* ...
+
+
+Installation
+------------
+
+* checkout
+* ...

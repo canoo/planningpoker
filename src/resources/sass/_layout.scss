@@ -1,0 +1,69 @@
+.hbox {
+  @include display-box;
+  @include box-orient(horizontal);
+}
+
+.hbox-flex {
+  @include display-box;
+  @include box-orient(horizontal);
+  @include box-flex(1);
+}
+
+.vbox {
+  @include display-box;
+  @include box-orient(vertical);
+}
+
+.vbox-flex {
+  @include display-box;
+  @include box-orient(vertical);
+  @include box-flex(1);
+}
+
+.box-flex {
+  @include box-flex(1);
+}
+
+.box-align-start {
+  @include box-align(start);
+}
+
+.box-align-center {
+  @include box-align(center);
+}
+
+.box-align-end {
+  @include box-align(end);
+}
+
+.box-align-stretch {
+  @include box-align(stretch);
+}
+
+.box-align-baseline {
+  @include box-align(baseline);
+}
+
+.box-pack-start {
+  @include box-pack(start);
+}
+
+.box-pack-center {
+  @include box-pack(center);
+}
+
+.box-pack-end {
+  @include box-pack(end);
+}
+
+.box-pack-justify {
+  @include box-pack(justify);
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-left {
+  text-align: left;
+}

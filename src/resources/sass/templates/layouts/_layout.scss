@@ -1,0 +1,53 @@
+.x-layout-card-item, .x-layout-card-container {
+  //position: absolute !important;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.x-layout-card-item {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.x-container, .x-body {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+}
+
+.x-body {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.x-body > .x-inner, .x-container > .x-inner {
+  -webkit-box-flex: 1;
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+.x-centered {
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+
+.x-floating {
+  position: absolute !important;
+}
+
+.x-centered > * {
+  position: relative !important;
+  -webkit-box-flex: 0 !important;
+}

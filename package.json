@@ -1,0 +1,20 @@
+{
+    "name": "planning-poker-mobile-app",
+    "bundle": "planning-poker",
+    "version": "1.0.0",
+    "dependencies":
+    {
+        "grunt": ">=0.3.15",
+        "grunt-contrib": ">=0.2.0",
+        "grunt-contrib-requirejs": ">=0.2.0",
+        "grunt-contrib-handlebars": ">=0.2.2",
+        "grunt-contrib-jshint": ">=0.1.0",
+        "grunt-compass": ">=0.2.14",
+        "buster": ">=0.6.2",
+        "buster-amd": ">=0.2.0"
+    },
+    "engines": {
+        "node": "0.8.x",
+        "npm":  "1.1.x"
+    }
+}
