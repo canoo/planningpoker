@@ -1,4 +1,4 @@
-require([
+define([
 
     // libs
     "$",
@@ -9,6 +9,8 @@ require([
     'templates/TemplateManager',
 
     // initialize plugins
+//    "$.hammer",
+    "zepto.flickable",
     "underscore.deferred",
     "backbone.layoutmanager",
     "backbone.mediator"
@@ -40,19 +42,15 @@ require([
 
 
     // Configure LayoutManager with Backbone Boilerplate defaults.
-    Backbone.LayoutManager.configure({
+    Backbone.Layout.configure({
 
         // Allow LayoutManager to augment Backbone.View.prototype.
         manage: true,
 
-        paths: {
-            layout  : "app/templates/layouts/",
-            template: "app/templates/views/"
-        },
+        prefix: "app/templates/",
 
         // Return a deferred for when all promises resolve/reject.
         when: function(promises) {
-            // TODO why does _.when(promises) not work ????
             return _.when.apply(null, promises);
         },
 

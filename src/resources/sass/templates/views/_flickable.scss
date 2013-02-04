@@ -1,0 +1,189 @@
+@mixin default-animation() {
+  -webkit-animation-name: default;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+
+  -moz-animation-name: default;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-fill-mode: forwards;
+
+  animation-name: default;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+$view-height: 480px;
+$view-width: 320px;
+
+.flick-container {
+
+  //width: $view-width;
+  //height: $view-height;
+
+  overflow: hidden;
+
+  .flick-element {
+
+    @include perspective(6000);
+
+    //width: 1600px;
+
+    @include display-box();
+    @include box-orient(horizontal);
+    @include box-pack(center);
+    @include box-align(center);
+
+
+    //.flick-item-container {
+
+      //@include box-flex(1);
+
+      .flick-item {
+
+        margin: 10px;
+
+        position: relative;
+
+        text-align: center;
+
+        @include transform-style(preserve-3d);
+
+        @include default-animation();
+
+        &.flipped {
+          -webkit-animation-name: cardflipped;
+          -moz-animation-name: cardflipped;
+          animation-name: cardflipped;
+        }
+
+        &.non-flipped {
+          -webkit-animation-name: default;
+          -moz-animation-name: default;
+          animation-name: default;
+        }
+
+        .front, .back {
+          border-radius: 5px;
+          position: absolute;
+
+          width: 100%;
+          height: 100%;
+          @include backface-visibility(hidden);
+        }
+
+        .front {
+          background-color: #9acd32;
+        }
+
+        .back {
+          background-color: #87cefa;
+          //-webkit-transform: rotateY(0deg) translate3d(0, 0, 0);
+          @include transform3d(rotateY(180deg) translate3d(0, 0, 0));
+          //-webkit-transform: rotateY(180deg) translate3d(0, 0, 0);
+
+          //@include rotateY(180deg);
+          //@include translate3d(0, 0, 0);
+        }
+      }
+    //}
+  }
+}
+
+.main-view {
+  width: 100%;
+  height: 100%;
+
+  @include display-box();
+  @include box-orient(horizontal);
+}
+
+.grid-view {
+
+  @include box-flex(1);
+
+  //width: $view-width;
+  //height: $view-height;
+
+  .grid-row {
+
+    @include display-box();
+    @include box-orient(horizontal);
+    @include box-flex(1);
+
+    .grid-item {
+
+      @include display-box();
+      @include box-orient(vertical);
+      @include box-align(center);
+      @include box-pack(center);
+
+      @include box-flex(1);
+
+      font-size: 48px;
+      text-align: center;
+      margin: 2px;
+      background-color: #20b2aa;
+      border-radius: 2px;
+    }
+  }
+}
+
+@-webkit-keyframes default {
+  from {
+    -webkit-transform: rotateY(180deg) translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: rotateY(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes cardflipped {
+  from {
+    -webkit-transform: rotateY(0deg) translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: rotateY(180deg) translate3d(0, 0, 0);
+  }
+}
+
+@-moz-keyframes default {
+  from {
+    -moz-transform: rotateY(180deg) translate3d(0, 0, 0);
+  }
+  to {
+    -moz-transform: rotateY(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@-moz-keyframes cardflipped {
+  from {
+    -moz-transform: rotateY(0deg) translate3d(0, 0, 0);
+  }
+  to {
+    -moz-transform: rotateY(180deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes default {
+  from {
+    transform: rotateY(180deg) translate3d(0, 0, 0);
+  }
+  to {
+    transform: rotateY(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes cardflipped {
+  from {
+    transform: rotateY(0deg) translate3d(0, 0, 0);
+  }
+  to {
+    transform: rotateY(180deg) translate3d(0, 0, 0);
+  }
+}

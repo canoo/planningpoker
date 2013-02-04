@@ -35,8 +35,7 @@ define([
 
             // Create a new Layout with options.
             var view = new LayoutContainer(_.extend({
-                id       : name + '-layout'
-
+                id       : name + '-viewport'
             }, options));
 
             // Cache the refererence.

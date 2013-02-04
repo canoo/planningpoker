@@ -1,5 +1,6 @@
 {
-    "name": "planning-poker-mobile-app",
+    "name": "planning-poker",
+
     "bundle": "planning-poker",
     "version": "1.0.0",
     "dependencies":

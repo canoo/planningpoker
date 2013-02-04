@@ -48,7 +48,6 @@ define([
             this.options = _.extend({}, defaults, options);
             this.name = options.name;
 
-//            console.log("card options", this.getName(), this.options);
             this._initializeEl(options);
             this.$el.data('card', this.name);
         },
@@ -94,7 +93,7 @@ define([
     });
 
     return Backbone.Layout.extend({
-//        className: 'x-container',
+        className: 'x-container',
 
         initialize: function (options) {
             this.cardStack = [];

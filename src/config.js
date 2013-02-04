@@ -3,9 +3,12 @@ require.config({
     baseUrl: 'app',
 
     paths  : {
-        app                     : '../app',
-        jst                     : '../app.jst.min',
+        app                     : '../planning-poker.min',
+        jst                     : '../planning-poker.jst.min',
         zepto                   : '../lib/zepto/zepto',
+//        'zepto.hammer'          : '../lib/zepto/zepto.hammer',
+        'zepto.flickable'       : '../lib/zepto/zepto.flickable',
+        hammer                  : '../lib/hammer/hammer',
         underscore              : '../lib/underscore/underscore',
         'underscore.deferred'   : '../lib/underscore/underscore.deferred',
 
@@ -13,7 +16,7 @@ require.config({
         'backbone.layoutmanager': '../lib/backbone/backbone.layoutmanager',
         'backbone.mediator'     : '../lib/backbone/backbone.mediator',
 
-        handlebars              : '../lib/handlebars/handlebars'
+        handlebars              : '../lib/handlebars/handlebars-1.0.rc.1'
     },
 
     shim   : {
@@ -23,6 +26,18 @@ require.config({
 
         'zepto': {
             exports: '$'
+        },
+//
+//        'hammer': {
+//            exports: 'Hammer'
+//        },
+
+        'zepto.hammer': {
+            deps: ['zepto', 'hammer']
+        },
+
+        'zepto.flickable': {
+            deps: ['zepto']
         },
 
         'underscore': {
@@ -54,6 +69,7 @@ require.config({
         '*': {
             jquery: 'zepto',
             $: 'zepto',
+//            "$.hammer": 'zepto.hammer',
             _: 'underscore'
         }
     }

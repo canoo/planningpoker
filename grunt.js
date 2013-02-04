@@ -48,8 +48,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     "src/<%= pkg.bundle %>.jst.min.js": [
-                        "src/app/templates/layouts/**/*.html",
-                        "src/app/templates/views/**/*.html"
+                        "src/app/templates/**/*.html"
                     ]
                 }
             }
@@ -119,14 +118,15 @@ module.exports = function(grunt) {
         },
 
         clean: {
-			build: [ 'build/**' ]
+            build: [
+                'build/**'
+            ]
         },
 
         copy: {
             build: {
                 files: {
                     "build/": [
-                        "src/config.json",
                         "src/require.js",
                         "src/config.js",
                         "src/index.html",
@@ -139,7 +139,6 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-//                    '../<%= pkg["project-mock"] %>/www/' : 'build/**'
                 }
             }
         }

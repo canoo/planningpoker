@@ -12,7 +12,6 @@ require([
     // Inside this function, kick-off all initialization, everything up to this
     // point should be definitions.
     $(function() {
-
         // Define your master router on the application namespace and trigger all
         // navigation from this instance.
         App.router = new Router();
@@ -42,7 +41,7 @@ require([
 //            // that may be placed in modules.  To have this work globally (at the
 //            // cost of losing all route events) you can change the following line
 //            // to: Backbone.history.navigate(href, true);
-//            Insights.router.navigate(href, true);
+//            App.router.navigate(href, true);
 //        }
     });
 });

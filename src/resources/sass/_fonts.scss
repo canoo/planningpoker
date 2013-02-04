@@ -1,11 +1,9 @@
 @import "font-awesome";
 
-$base-font-color: #333333;
-
 @mixin font-smoothing($val: antialiased) {
   -webkit-font-smoothing: $val;
-//-moz-font-smoothing: $val;
-//-ms-font-smoothing: $val;
-//-o-font-smoothing: $val;
+  -moz-font-smoothing: $val;
+  -ms-font-smoothing: $val;
+  -o-font-smoothing: $val;
   font-smoothing: $val;
 }
