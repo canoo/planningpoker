@@ -2,30 +2,34 @@ require.config({
 
     baseUrl: 'app',
 
-    paths  : {
-        app                     : '../planning-poker.min',
-        jst                     : '../planning-poker.jst.min',
-        zepto                   : '../lib/zepto/zepto',
+    paths: {
+        app: '../planning-poker.min',
+        jst: '../planning-poker.jst.min',
+
 //        'zepto.hammer'          : '../lib/zepto/zepto.hammer',
-        'zepto.flickable'       : '../lib/zepto/zepto.flickable',
-        hammer                  : '../lib/hammer/hammer',
-        underscore              : '../lib/underscore/underscore',
-        'underscore.deferred'   : '../lib/underscore/underscore.deferred',
 
-        backbone                : '../lib/backbone/backbone',
-        'backbone.layoutmanager': '../lib/backbone/backbone.layoutmanager',
-        'backbone.mediator'     : '../lib/backbone/backbone.mediator',
-
-        handlebars              : '../lib/handlebars/handlebars-1.0.rc.1'
+        zepto                   : '../scripts/zepto.core/zepto',
+        'zepto.selector'        : '../scripts/zepto.selector/selector',
+        'zepto.flickable'       : '../scripts/zepto.flickable/src/zepto.flickable',
+        underscore              : '../scripts/underscore/underscore',
+        'underscore.deferred'   : '../scripts/underscore.deferred/underscore.deferred',
+        backbone                : '../scripts/backbone/backbone',
+        'backbone.layoutmanager': '../scripts/backbone.layoutmanager/backbone.layoutmanager',
+        'backbone.mediator'     : '../scripts/backbone.mediator/backbone-mediator',
+        handlebars              : '../scripts/handlebars/handlebars'
     },
 
-    shim   : {
+    shim: {
         'jst': {
             exports: 'JST'
         },
 
         'zepto': {
             exports: '$'
+        },
+
+        'zepto.selector': {
+            deps: ['zepto']
         },
 //
 //        'hammer': {
@@ -54,23 +58,24 @@ require.config({
         },
 
         'backbone.layoutmanager': {
-            deps: [ 'underscore', 'zepto', 'backbone' ]
+            deps   : [ 'underscore', 'zepto', 'backbone' ],
+            exports: 'Backbone.Layout'
         },
 
         'backbone.mediator': {
             deps: [ 'underscore', 'zepto', 'backbone' ]
         },
 
-        'handlebars' : {
+        'handlebars': {
             exports: 'Handlebars'
         }
     },
-    map    : {
+    map : {
         '*': {
             jquery: 'zepto',
-            $: 'zepto',
+            $     : 'zepto',
 //            "$.hammer": 'zepto.hammer',
-            _: 'underscore'
+            _     : 'underscore'
         }
     }
 });

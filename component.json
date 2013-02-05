@@ -1,0 +1,16 @@
+{
+    "name"        : "planning-poker",
+    "version"     : "1.0.0",
+    "dependencies": {
+        "backbone"              : "0.9.10",
+        "backbone.layoutmanager": "https://github.com/tbranyen/backbone.layoutmanager.git#~0.8.2",
+        "backbone.mediator"     : "https://github.com/chalbert/Backbone-Mediator.git",
+        "underscore"            : "1.4.4",
+        "underscore.deferred"   : "https://github.com/wookiehangover/underscore.deferred.git",
+        "zepto.core"            : "https://github.com/olegomon/zepto.core.git",
+        "zepto.selector"        : "https://github.com/olegomon/zepto.selector.git",
+        "zepto.flickable"       : "https://github.com/tomlongo/Flickable.js.git",
+        "handlebars"            : "~1.0.0-rc.2",
+        "requirejs"             : "~2.1.4"
+    }
+}

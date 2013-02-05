@@ -10,6 +10,7 @@ define([
 
     // initialize plugins
 //    "$.hammer",
+    "zepto.selector",
     "zepto.flickable",
     "underscore.deferred",
     "backbone.layoutmanager",

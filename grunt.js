@@ -127,13 +127,13 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     "build/": [
-                        "src/require.js",
+                        "src/lib/requirejs/require.js",
                         "src/config.js",
                         "src/index.html",
 
-                        "src/**/*.css",
-                        "src/**/*.png",
-                        "src/**/*.jpg"
+                        "src/resources/**/*.css",
+                        "src/resources/**/*.png",
+                        "src/resources/**/*.jpg"
                     ]
                 }
             },
