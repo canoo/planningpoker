@@ -122,7 +122,7 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     "build/": [
-                        "src/lib/requirejs/require.js",
+                        "src/scripts/requirejs/require.js",
                         "src/config.js",
                         "src/index.html",
 
