@@ -18,7 +18,6 @@ module.exports = function(grunt) {
                     name: 'app',
                     baseUrl: "src/app",
                     mainConfigFile: "src/config.js",
-//                    optimize: "none",
                     optimize: "uglify",
                     out: "build/<%= pkg.bundle %>.min.js"
                 }
@@ -111,10 +110,6 @@ module.exports = function(grunt) {
                 ],
                 tasks: 'handlebars'
             }
-//            lint: {
-//                files: '<config:lint.files>',
-//                tasks: 'default'
-//            }
         },
 
         clean: {
@@ -154,7 +149,5 @@ module.exports = function(grunt) {
     // Default task.
     grunt.registerTask('default', 'clean compass handlebars requirejs copy');
     grunt.registerTask('dist', 'clean compass:prod handlebars requirejs copy');
-
     grunt.registerTask('build', 'clean compass handlebars requirejs copy');
-
 };
